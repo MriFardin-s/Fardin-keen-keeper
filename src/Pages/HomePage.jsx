@@ -1,9 +1,12 @@
 import React from 'react';
+import Stats from '../Components/Stats';
+import FriendList from '../Components/FriendList/FriendList';
 
 const HomePage = () => {
     return (
-        <div className='bg-amber-600 '>
-            HomePAge
+        <div>
+            <Stats/>
+            <FriendList/>
         </div>
     );
 };

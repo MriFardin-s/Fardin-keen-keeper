@@ -6,7 +6,7 @@ const ErrorPage = () => {
         <div className="flex flex-col items-center justify-center min-h-screen bg-base-200">
             <div className="text-center">
 
-                <h1 className="text-9xl font-extrabold text-fuchsia-600 animate-bounce">
+                <h1 className="text-9xl font-extrabold text-red-800 animate-bounce">
                     404
                 </h1>
 
