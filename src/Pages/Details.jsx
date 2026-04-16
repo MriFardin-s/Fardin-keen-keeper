@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useParams } from "react-router";
 import useFriends from "../hooks/useFriends";
 import { BeatLoader } from "react-spinners";
 import { FaPhoneAlt, FaRegCommentDots, FaVideo, FaTrashAlt, FaRegBellSlash } from 'react-icons/fa';
 import { FiArchive } from 'react-icons/fi';
+import { TimelineContext } from '../context/TimeLineProvider';
 
 const Details = () => {
     const { id } = useParams();
     const { friends, loading } = useFriends();
+    const {addActivity} = useContext( TimelineContext)
 
     const expectedFriend = friends.find((friend) => friend.id === Number(id));
+
+    const handleAction = (type) => {
+        addActivity(type, expectedFriend.name);
+        alert(`${type} added to TimeLine!`)
+    }
 
     if (loading) {
         return (
@@ -85,15 +92,15 @@ const Details = () => {
                     <div className="bg-white p-10 rounded-md shadow-sm border border-gray-100">
                         <h3 className="text-xl font-medium text-[#244D3F] mb-8">Quick Check-In</h3>
                         <div className="grid grid-cols-3 gap-8">
-                            <button className="flex flex-col items-center py-10 bg-gray-50 hover:bg-green-50 rounded-md transition-all gap-3 border border-transparent hover:border-green-100 group">
+                            <button onClick={() => handleAction('Call')} className="flex flex-col items-center py-10 bg-gray-50 hover:bg-green-50 rounded-md transition-all gap-3 border border-transparent hover:border-green-100 group">
                                 <FaPhoneAlt className="text-[#64748B] text-xl group-hover:text-green-600" />
                                 <span className="text-sm font-normal text-[#1F2937]">Call</span>
                             </button>
-                            <button className="flex flex-col items-center py-10 bg-gray-50 hover:bg-green-50 rounded-md transition-all gap-3 border border-transparent hover:border-green-100 group">
-                                <FaRegCommentDots className="text-[#64748B] text-xl group-hover:text-green-600" />
+                            <button onClick={() => handleAction('Text')} className="flex flex-col items-center py-10 bg-gray-50 hover:bg-green-50 rounded-md transition-all gap-3 border border-transparent hover:border-green-100 group">
+                                <FaRegCommentDots  className="text-[#64748B] text-xl group-hover:text-green-600" />
                                 <span className="text-sm font-normal text-[#1F2937]">Text</span>
                             </button>
-                            <button className="flex flex-col items-center py-10 bg-gray-50 hover:bg-green-50 rounded-md transition-all gap-3 border border-transparent hover:border-green-100 group">
+                            <button onClick={() => handleAction('Video')} className="flex flex-col items-center py-10 bg-gray-50 hover:bg-green-50 rounded-md transition-all gap-3 border border-transparent hover:border-green-100 group">
                                 <FaVideo className="text-[#64748B] text-xl group-hover:text-green-600" />
                                 <span className="text-sm font-normal text-[#1F2937]">Video</span>
                             </button>
