@@ -4,6 +4,7 @@ import TimeLine from "../Pages/TimeLine";
 import Stats from "../Pages/Stats";
 import RootLayout from "../layout/RootLayout";
 import ErrorPage from "../Pages/ErrorPage";
+import Details from "../Pages/Details";
 
 export const router = createBrowserRouter([
     {
@@ -22,6 +23,11 @@ export const router = createBrowserRouter([
                 path: "/stats",
                 element: <Stats />
             }
+            ,
+            {
+                path: "/details/:id",
+                element: <Details />
+            },
         ],
         errorElement: <ErrorPage/>
 

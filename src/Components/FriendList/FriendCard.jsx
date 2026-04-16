@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 const FriendCard = ({ friend }) => {
 
   const statusStyles = {
@@ -7,7 +9,7 @@ const FriendCard = ({ friend }) => {
   };
 
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center border border-gray-50">
+    <Link to={`/details/${friend.id}`} className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center border border-gray-50">
 
       <div className="relative mb-4">
         <img
@@ -37,7 +39,7 @@ const FriendCard = ({ friend }) => {
       <button className={`w-25 py-2 rounded-xl font-bold text-sm shadow-sm ${statusStyles[friend.status] || 'bg-gray-200'}`}>
         {friend.status}
       </button>
-    </div>
+    </Link>
   );
 };
 

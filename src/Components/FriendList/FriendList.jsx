@@ -1,35 +1,37 @@
-import {  useEffect, useState } from "react";
+
 import FriendCard from "./FriendCard";
 import { BeatLoader } from "react-spinners";
+import useFriends from "../../hooks/useFriends";
 
 
 
 
 const FriendList = () => {
+  const {friends, loading} = useFriends();
 
-  const [friends, setFriends] = useState([]);
-  const [loading, setLoading] = useState(true);
+  // const [friends, setFriends] = useState([]);
+  // const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchFriend = async () => {
-      const res = await fetch('/data.json');
-      const data = await res.json();
+  // useEffect(() => {
+  //   const fetchFriend = async () => {
+  //     const res = await fetch('/data.json');
+  //     const data = await res.json();
 
-      setTimeout(() => {
-        setFriends(data)
-        setLoading(false)
-      }, 3500)
+  //     setTimeout(() => {
+  //       setFriends(data)
+  //       setLoading(false)
+  //     }, 300)
 
 
-    };
-    fetchFriend();
-  }, []
+  //   };
+  //   fetchFriend();
+  // }, []
 
-  )
+  // )
 
 
   return (
-    <div className="bg-gray-50 min-h-screen p-8">
+    <div className="bg-gray-50 py-10 p-8">
       <div className=" max-w-6xl mx-auto border-t pt-10 border-gray-200 ">
         <h2 className="text-2xl font-bold text-slate-800 mb-8">Your Friends</h2>
 

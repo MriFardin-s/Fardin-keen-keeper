@@ -25,7 +25,7 @@
   },
   {
     "id": 4,
-    "name": "James Wright",
+    "name": "Sophia Chen",
     "lastSeen": 80,
     "tags": ["hobby", "travel"],
     "status": "Overdue",
@@ -33,7 +33,7 @@
   },
   {
     "id": 5,
-    "name": "Sophia Chen",
+    "name": "James Wright",
     "lastSeen": 5,
     "tags": ["school"],
     "status": "On-Track",
