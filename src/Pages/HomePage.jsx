@@ -7,7 +7,7 @@ const HomePage = () => {
         <div>
             <Stats/>
             
-            <div className="mt-24" >  <FriendList/></div>
+            <div className="" >  <FriendList/></div>
           
         </div>
     );

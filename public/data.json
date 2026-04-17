@@ -2,97 +2,145 @@
   {
     "id": 1,
     "name": "Emma Wilson",
-    "lastSeen": 62,
-    "tags": ["work"],
-    "status": "Almost Due",
-    "image": "https://i.pravatar.cc/150?u=1"
+    "picture": "https://i.pravatar.cc/150?u=1",
+    "email": "emma.wilson@example.com",
+    "days_since_contact": 62,
+    "status": "overdue",
+    "tags": ["work", "marketing"],
+    "bio": "Senior project manager at the tech firm. Great at coordinating team events.",
+    "goal": 30,
+    "next_due_date": "2026-03-18"
   },
   {
     "id": 2,
     "name": "David Kim",
-    "lastSeen": 45,
-    "tags": ["family"],
-    "status": "Overdue",
-    "image": "https://i.pravatar.cc/150?u=2"
+    "picture": "https://i.pravatar.cc/150?u=2",
+    "email": "david.kim@example.com",
+    "days_since_contact": 45,
+    "status": "overdue",
+    "tags": ["family", "cousin"],
+    "bio": "Always brings the best snacks to family gatherings. Loves photography.",
+    "goal": 14,
+    "next_due_date": "2026-03-05"
   },
   {
     "id": 3,
     "name": "Lisa Nakamura",
-    "lastSeen": 15,
-    "tags": ["work"],
-    "status": "On-Track",
-    "image": "https://i.pravatar.cc/150?u=3"
+    "picture": "https://i.pravatar.cc/150?u=3",
+    "email": "lisa.n@example.com",
+    "days_since_contact": 15,
+    "status": "on-track",
+    "tags": ["work", "designer"],
+    "bio": "Talented UI designer. We often share design inspiration and tools.",
+    "goal": 21,
+    "next_due_date": "2026-04-23"
   },
   {
     "id": 4,
     "name": "Sophia Chen",
-    "lastSeen": 80,
+    "picture": "https://i.pravatar.cc/150?u=4",
+    "email": "sophia.c@example.com",
+    "days_since_contact": 80,
+    "status": "overdue",
     "tags": ["hobby", "travel"],
-    "status": "Overdue",
-    "image": "https://i.pravatar.cc/150?u=4"
+    "bio": "Travel enthusiast. We trekked through the Himalayas last year.",
+    "goal": 60,
+    "next_due_date": "2026-02-15"
   },
   {
     "id": 5,
     "name": "James Wright",
-    "lastSeen": 5,
-    "tags": ["school"],
-    "status": "On-Track",
-    "image": "https://i.pravatar.cc/150?u=5"
+    "picture": "https://i.pravatar.cc/150?u=5",
+    "email": "james.w@example.com",
+    "days_since_contact": 5,
+    "status": "on-track",
+    "tags": ["school", "childhood friend"],
+    "bio": "Best friend since elementary school. Obsessed with chess and sci-fi.",
+    "goal": 7,
+    "next_due_date": "2026-04-19"
   },
   {
     "id": 6,
     "name": "Michael Brown",
-    "lastSeen": 30,
-    "tags": ["gym"],
-    "status": "Almost Due",
-    "image": "https://i.pravatar.cc/150?u=6"
+    "picture": "https://i.pravatar.cc/150?u=6",
+    "email": "michael.b@example.com",
+    "days_since_contact": 30,
+    "status": "almost due",
+    "tags": ["gym", "fitness"],
+    "bio": "My gym partner. Keeps me motivated during leg days.",
+    "goal": 30,
+    "next_due_date": "2026-04-17"
   },
   {
     "id": 7,
     "name": "Olivia Martinez",
-    "lastSeen": 95,
-    "tags": ["family"],
-    "status": "Overdue",
-    "image": "https://i.pravatar.cc/150?u=7"
+    "picture": "https://i.pravatar.cc/150?u=7",
+    "email": "olivia.m@example.com",
+    "days_since_contact": 95,
+    "status": "overdue",
+    "tags": ["family", "sister"],
+    "bio": "Living in Spain now. We need to video call more often.",
+    "goal": 30,
+    "next_due_date": "2026-02-10"
   },
   {
     "id": 8,
     "name": "Daniel Lee",
-    "lastSeen": 12,
-    "tags": ["work"],
-    "status": "On-Track",
-    "image": "https://i.pravatar.cc/150?u=8"
+    "picture": "https://i.pravatar.cc/150?u=8",
+    "email": "daniel.lee@example.com",
+    "days_since_contact": 12,
+    "status": "on-track",
+    "tags": ["work", "coding"],
+    "bio": "Brilliant backend developer. Taught me a lot about Node.js.",
+    "goal": 14,
+    "next_due_date": "2026-04-19"
   },
   {
     "id": 9,
     "name": "Amara Okafor",
-    "lastSeen": 55,
-    "tags": ["hobby"],
-    "status": "Almost Due",
-    "image": "https://i.pravatar.cc/150?u=9"
+    "picture": "https://i.pravatar.cc/150?u=9",
+    "email": "amara.o@example.com",
+    "days_since_contact": 55,
+    "status": "almost due",
+    "tags": ["hobby", "painting"],
+    "bio": "Met at an art gallery. She has a unique style in watercolor.",
+    "goal": 60,
+    "next_due_date": "2026-04-22"
   },
   {
     "id": 10,
     "name": "Lucas Müller",
-    "lastSeen": 3,
-    "tags": ["travel"],
-    "status": "On-Track",
-    "image": "https://i.pravatar.cc/150?u=10"
+    "picture": "https://i.pravatar.cc/150?u=10",
+    "email": "lucas.m@example.com",
+    "days_since_contact": 3,
+    "status": "on-track",
+    "tags": ["travel", "surfing"],
+    "bio": "Surfing instructor I met in Bali. Very laid back and positive.",
+    "goal": 90,
+    "next_due_date": "2026-07-12"
   },
   {
     "id": 11,
     "name": "Ayesha Khan",
-    "lastSeen": 110,
+    "picture": "https://i.pravatar.cc/150?u=11",
+    "email": "ayesha.k@example.com",
+    "days_since_contact": 110,
+    "status": "overdue",
     "tags": ["school", "work"],
-    "status": "Overdue",
-    "image": "https://i.pravatar.cc/150?u=11"
+    "bio": "Study partner from university. Now working in finance.",
+    "goal": 60,
+    "next_due_date": "2026-01-20"
   },
   {
     "id": 12,
     "name": "Gabriel Silva",
-    "lastSeen": 22,
-    "tags": ["gym"],
-    "status": "Almost Due",
-    "image": "https://i.pravatar.cc/150?u=12"
+    "picture": "https://i.pravatar.cc/150?u=12",
+    "email": "gabriel.s@example.com",
+    "days_since_contact": 22,
+    "status": "almost due",
+    "tags": ["gym", "soccer"],
+    "bio": "Plays in the local amateur soccer league. Huge fan of Flamengo.",
+    "goal": 25,
+    "next_due_date": "2026-04-20"
   }
 ]

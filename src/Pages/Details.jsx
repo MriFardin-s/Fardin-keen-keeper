@@ -5,18 +5,25 @@ import { BeatLoader } from "react-spinners";
 import { FaPhoneAlt, FaRegCommentDots, FaVideo, FaTrashAlt, FaRegBellSlash } from 'react-icons/fa';
 import { FiArchive } from 'react-icons/fi';
 import { TimelineContext } from '../context/TimeLineProvider';
+import { toast } from 'react-toastify';
 
 const Details = () => {
     const { id } = useParams();
     const { friends, loading } = useFriends();
-    const {addActivity} = useContext( TimelineContext)
+    const { addActivity } = useContext(TimelineContext);
 
     const expectedFriend = friends.find((friend) => friend.id === Number(id));
 
+    const statusStyles = {
+        'overdue': 'bg-red-500 text-white',
+        'almost due': 'bg-orange-400 text-white',
+        'on-track': 'bg-green-700 text-white'
+    };
+
     const handleAction = (type) => {
         addActivity(type, expectedFriend.name);
-        alert(`${type} added to TimeLine!`)
-    }
+        toast.success(`${type} added to TimeLine!`);
+    };
 
     if (loading) {
         return (
@@ -31,27 +38,35 @@ const Details = () => {
         return <div className="text-center mt-20 font-bold text-red-500 text-xl">Friend not found!</div>;
     }
 
+
+    const currentStatus = expectedFriend.status.toLowerCase();
+    const activeClass = statusStyles[currentStatus] || 'bg-gray-100 text-gray-600';
+
     return (
-        <div className="bg-gray-50  p-4 md:p-10 pb-4 ">
+        <div className="bg-gray-50 p-4 md:p-10 pb-4">
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8">
+
                 <div className="md:col-span-4 flex flex-col gap-4">
                     <div className="bg-white rounded-2xl p-8 shadow-sm text-center border border-gray-100">
                         <img
-                            src={expectedFriend.image}
+                            src={expectedFriend.picture}
                             alt={expectedFriend.name}
                             className="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-gray-50 object-cover"
                         />
                         <h2 className="text-2xl font-bold text-[#1F2937]">{expectedFriend.name}</h2>
+
                         <div className="flex flex-col gap-2 mt-4 items-center">
-                            <span className="px-3 py-2 bg-red-100 text-red-600 text-[10px] font-bold rounded-md">
+
+                            <span className={`px-3 py-2 text-[10px] font-bold rounded-md ${activeClass}`}>
                                 {expectedFriend.status}
                             </span>
                             <span className="px-3 py-1 bg-green-50 text-green-700 text-[10px] font-bold rounded-md uppercase">
                                 {expectedFriend.tags?.[0] || "FAMILY"}
                             </span>
                         </div>
-                        <p className="text-[#64748B] italic mt-6 text-sm">"Former colleague, great mentor"</p>
-                        <p className="text-[#64748B] text-[14px] mt-2 font-normal tracking-tight">Preferred: email</p>
+
+                        <p className="text-[#64748B] italic mt-6 text-sm">{expectedFriend.bio}</p>
+                        <p className="text-[#64748B] text-[14px] mt-2 font-normal tracking-tight">{expectedFriend.email}</p>
                     </div>
 
                     <div className="flex flex-col gap-3">
@@ -66,27 +81,28 @@ const Details = () => {
                         </button>
                     </div>
                 </div>
+
+
                 <div className="md:col-span-8 flex flex-col gap-5">
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
                         <div className="bg-white p-8 rounded-md shadow-sm border border-gray-100 text-center">
-                            <div className="text-3xl font-semibold text-[#244D3F] mb-1">{expectedFriend.lastSeen}</div>
+                            <div className="text-3xl font-semibold text-[#244D3F] mb-1">{expectedFriend.days_since_contact}</div>
                             <div className="text-[18px] text-[#64748B] font-normal">Days Since Contact</div>
                         </div>
                         <div className="bg-white p-8 rounded-md shadow-sm border border-gray-100 text-center">
-                            <div className="text-3xl font-semibold text-[#244D3F] mb-1">30</div>
+                            <div className="text-3xl font-semibold text-[#244D3F] mb-1">{expectedFriend.goal}</div>
                             <div className="text-[18px] text-[#64748B] font-normal">Goal (Days)</div>
                         </div>
                         <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center flex flex-col justify-center">
-                            <div className="text-3xl font-semibold text-[#244D3F] leading-tight mb-1">Feb 27, 2026</div>
-                            <div className="text-[18px] text-[#64748B]  font-normal">Next Due</div>
+                            <div className="text-3xl font-semibold text-[#244D3F] leading-tight mb-1">{expectedFriend.next_due_date}</div>
+                            <div className="text-[18px] text-[#64748B] font-normal">Next Due</div>
                         </div>
                     </div>
-
 
                     <div className="bg-white p-10 rounded-md shadow-sm border border-gray-100 relative">
                         <button className="absolute top-8 right-8 text-[10px] bg-gray-50 px-4 py-1.5 rounded-lg text-[#1F2937] font-bold border border-gray-100 hover:bg-gray-100">Edit</button>
                         <h3 className="text-xl font-bold text-[#244D3F] mb-4">Relationship Goal</h3>
-                        <p className="text-[#64748B] text-normal ">Connect every <span className="font-bold text-[#1F2937]">30 days</span></p>
+                        <p className="text-[#64748B] text-normal ">Connect every <span className="font-bold text-[#1F2937]">{expectedFriend.goal} days</span></p>
                     </div>
 
                     <div className="bg-white p-10 rounded-md shadow-sm border border-gray-100">
@@ -97,7 +113,7 @@ const Details = () => {
                                 <span className="text-sm font-normal text-[#1F2937]">Call</span>
                             </button>
                             <button onClick={() => handleAction('Text')} className="flex flex-col items-center py-10 bg-gray-50 hover:bg-green-50 rounded-md transition-all gap-3 border border-transparent hover:border-green-100 group">
-                                <FaRegCommentDots  className="text-[#64748B] text-xl group-hover:text-green-600" />
+                                <FaRegCommentDots className="text-[#64748B] text-xl group-hover:text-green-600" />
                                 <span className="text-sm font-normal text-[#1F2937]">Text</span>
                             </button>
                             <button onClick={() => handleAction('Video')} className="flex flex-col items-center py-10 bg-gray-50 hover:bg-green-50 rounded-md transition-all gap-3 border border-transparent hover:border-green-100 group">
@@ -106,7 +122,6 @@ const Details = () => {
                             </button>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
