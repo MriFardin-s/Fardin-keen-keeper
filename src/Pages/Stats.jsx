@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { TimelineContext } from "../context/TimeLineProvider";
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from 'recharts';
-import { HiOutlineChartPie } from "react-icons/hi"; 
+import { HiOutlineChartPie } from "react-icons/hi";
 
 const Stats = () => {
     const { activities } = useContext(TimelineContext);
@@ -17,7 +17,7 @@ const Stats = () => {
         value: dataCounts[key]
     }));
 
-    const COLORS = ['purple', 'black', 'green']; 
+    const COLORS = ['purple', 'black', 'green'];
 
     return (
         <div className="max-w-4xl mx-auto p-10 min-h-[70vh]">
@@ -51,7 +51,7 @@ const Stats = () => {
                                     ))}
                                 </Pie>
                                 <Tooltip />
-                                <Legend/>
+                                <Legend />
                             </PieChart>
                         </ResponsiveContainer>
                     </div>

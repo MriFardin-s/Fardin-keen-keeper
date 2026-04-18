@@ -3,21 +3,21 @@ import { TimelineContext } from "../context/TimeLineProvider";
 import { IoMdCall } from "react-icons/io";
 import { LuMessageSquareText } from "react-icons/lu";
 import { IoVideocamOutline } from "react-icons/io5";
-import { HiOutlineInbox } from "react-icons/hi"; 
+import { HiOutlineInbox } from "react-icons/hi";
 const TimeLine = () => {
     const { activities } = useContext(TimelineContext);
     const [filter, setFilter] = useState('All');
 
-    
-    const filteredActivities = filter === 'All' 
-        ? activities 
+
+    const filteredActivities = filter === 'All'
+        ? activities
         : activities.filter(a => a.type.toLowerCase() === filter.toLowerCase());
 
     return (
         <div className="max-w-4xl mx-auto p-10 min-h-[60vh]">
             <h1 className="text-3xl text-[#1F2937] font-bold mb-6">Timeline</h1>
-            
-            <select 
+
+            <select
                 onChange={(e) => setFilter(e.target.value)}
                 className="mb-8 p-3 border rounded-xl bg-white text-slate-600 shadow-sm focus:ring-green-500"
             >
@@ -37,7 +37,7 @@ const TimeLine = () => {
                         <p className="text-gray-400 mt-2">No activities found in your timeline.</p>
                     </div>
                 ) : (
-                    
+
                     filteredActivities.map(item => (
                         <div key={item.id} className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-4 transition-all hover:shadow-md">
                             <div className="p-3 bg-emerald-50  text-2xl text-emerald-600">

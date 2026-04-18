@@ -1,16 +1,27 @@
-# React + Vite
+Fardin-Keen-Keeper
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Fardin-Keen-Keeper is a modern React application designed to help maintain consistent connections with loved. It acts as a relationship tracker, allowing to easily monitor how long it's been since last contact and when next reach-out is due.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Key Features
 
-## React Compiler
+Personal Timeline: Records the history of every call, text, or video chat with specific dates.
+Smart Status System: Displays 'Overdue', 'Almost Due', or 'On-Track' statuses based on the gap in communication.
+Local Storage Support: Ensures activity data persists even after a browser reload.
+Analytics Dashboard: Visualizes relationship health through graphs using Recharts.
+Quick Check-In: Add call, text, or video activities with a single click from the details page.
+Fully Responsive: Built with Tailwind CSS to look great on both mobile and desktop devices.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Technologies Used:
+This project integrates a variety of modern web technologies:
+
+Frontend: React.js (Vite)
+Styling: Tailwind CSS & Daisy UI
+Routing: React Router
+State Management: React Context API
+Icons: React Icons
+Charts: Recharts
+Notifications: React Toastify
+Deployment: Netlify
